@@ -1,0 +1,18 @@
+project:
+    name : ChennaiTransit AI
+    version: 0.1.0
+    environment: development
+data: 
+    raw: data/raw/
+    transformed: data/transformed/
+    final: data/final/
+
+ETL:
+   batch_size: 5000
+   chunck_size: 10000
+
+database:
+   host: localhost
+   port: 5432
+   name: chennaitransit
+    
