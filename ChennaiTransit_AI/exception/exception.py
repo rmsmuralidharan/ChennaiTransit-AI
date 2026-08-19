@@ -1,6 +1,6 @@
 import sys
 
-class ChennaiTransitAIException:
+class ChennaiTransitAIException(Exception):
 
     def __init__(
             self,
