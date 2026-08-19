@@ -13,11 +13,6 @@ CONFIG_FILE = PROJECT_ROOT / "config" / "config.yaml"
 
 de.load_dotenv(ENV_FILE)
 
-print("PROJECT_ROOT:", PROJECT_ROOT)
-print("ENV_FILE:", ENV_FILE)
-print("ENV_FILE EXISTS:", ENV_FILE.exists())
-print("USERNAME:", os.getenv("DATABASE_USERNAME"))
-print("PASSWORD EXISTS:", os.getenv("DATABASE_PASSWORD") is not None)
 
 class ConfigurationManager:
     def __init__(self):
