@@ -9,4 +9,3 @@ uvicorn
 pytest
 python-dotenv
 pyyaml
--e .

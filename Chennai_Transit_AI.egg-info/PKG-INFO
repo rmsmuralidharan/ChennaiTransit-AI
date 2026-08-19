@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: Chennai-Transit-AI
+Version: 0.1.0
+Author: Muralidharan RMS
+Author-email: rmsmuralidharan@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+License-File: licence
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: sqlalchemy
+Requires-Dist: psycopg
+Requires-Dist: scikit-learn
+Requires-Dist: torch
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: pytest
+Requires-Dist: python-dotenv
+Requires-Dist: pyyaml
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
