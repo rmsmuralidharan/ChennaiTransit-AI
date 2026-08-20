@@ -488,6 +488,11 @@ if __name__ == "__main__":
         x_test=x_test
     )
 
+    data_preprocessor.save_preprocessor(
+
+        preprocessor=preprocessor
+    )
+
     feature_names = data_preprocessor.get_processed_feature_names(
         preprocessor=preprocessor
     )
