@@ -41,7 +41,8 @@ class BaseLineRidge:
     def seperate_features_and_target(
             self,
             train_df,
-            validation_df
+            validation_df,
+            test_df
     ):
         x_train = train_df.drop(
             columns = [self.target_column]
@@ -57,31 +58,21 @@ class BaseLineRidge:
             self.target_column
         ]
 
-        print("\nFeatures and target separated.")
-
-        print(
-            f"X_train shape: {x_train.shape}"
+        x_test = test_df.drop(
+            columns = [self.target_column]
         )
 
-        print(
-            f"y_train shape: {y_train.shape}"
-        )
-
-        print(
-            f"X_validation shape: "
-            f"{x_validation.shape}"
-        )
-
-        print(
-            f"y_validation shape: "
-            f"{y_validation.shape}"
-        )
+        y_test = test_df[
+            self.target_column
+        ]
 
         return (
             x_train,
             y_train,
             x_validation,
-            y_validation
+            y_validation,
+            x_test,
+            y_test
         )
 
     def train_ridge_model(
