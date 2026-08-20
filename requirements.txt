@@ -1,0 +1,12 @@
+pandas
+numpy
+sqlalchemy
+psycopg
+scikit-learn
+torch
+fastapi
+uvicorn
+pytest
+python-dotenv
+pyyaml
+-e .
