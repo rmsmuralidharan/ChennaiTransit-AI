@@ -20,4 +20,7 @@ class DatabaseSchemaManager:
             connection.execute(
                 text("CREATE SCHEMA IF NOT EXISTS final")
             )
-            
+
+            connection.execute(
+                text("CREATE SCHEMA IF NOT EXISTS model")
+            )
