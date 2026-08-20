@@ -24,6 +24,30 @@ class DemandTransformer:
             demand_df['timestamp']
         )
 
+        ## extract year,,,,month,,,,,day
+
+        demand_df['year'] = (
+            demand_df['timestamp'].dt.year
+        ).astype(int)
+
+        demand_df['month'] = (
+            demand_df['timestamp'].dt.month
+        ).astype(int)
+
+        demand_df['day'] = (
+            demand_df['timestamp'].dt.day
+        ).astype(int)
+
+        ## extract hour(already exists),,,,,minute,,,,,second
+
+        demand_df['minutes'] = (
+            demand_df['timestamp'].dt.minute
+        ).astype(int)
+
+        demand_df['seconds'] = (
+            demand_df['timestamp'].dt.second
+        ).astype(int)
+
         columns_to_keep = [
         "station_id",
         "station_name",
@@ -31,7 +55,12 @@ class DemandTransformer:
         "latitude",
         "longitude",
         "timestamp",
+        "year",
+        "month",
+        "day",
         "hour",
+        "minutes",
+        "seconds",
         "day_of_week",
         "is_weekend",
         "demand_profile",
