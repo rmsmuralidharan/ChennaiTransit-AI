@@ -23,6 +23,11 @@ class BaseLineRidge:
             con=engine
         )
 
+        test_df = pd.read_sql(
+            'select * from model.test_data',
+            con=engine
+        )
+
         print(
             f"Training data loaded: {train_df.shape}"
         )
@@ -31,7 +36,7 @@ class BaseLineRidge:
             f"Validation data loaded: {validation_df.shape}"
         )
 
-        return train_df, validation_df
+        return train_df, validation_df, test_df
 
     def seperate_features_and_target(
             self,
