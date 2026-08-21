@@ -447,7 +447,7 @@ st.markdown(
 # DEFAULT API URL
 # ============================================================
 
-DEFAULT_API_URL = "http://127.0.0.1:8000"
+DEFAULT_API_URL = "https://chennaitransit-ai.onrender.com"
 
 
 # ============================================================
