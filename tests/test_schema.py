@@ -1,7 +1,10 @@
 from database.schema import DatabaseSchemaManager
 
-db_schema_manager = DatabaseSchemaManager()
 
-db_schema_manager.create_schemas()
+def test_create_schemas():
 
-print('Schema created successfully')
+    db_schema_manager = DatabaseSchemaManager()
+
+    db_schema_manager.create_schemas()
+
+    assert db_schema_manager is not None

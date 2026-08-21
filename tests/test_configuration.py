@@ -1,30 +1,29 @@
 from ChennaiTransit_AI.utils.configuration import ConfigurationManager
 
 
-configuration_manager = ConfigurationManager()
+def test_database_config():
 
+    configuration_manager = ConfigurationManager()
 
-# Test database configuration
-database_config = configuration_manager.get_database_config()
+    # Test database configuration
+    database_config = configuration_manager.get_database_config()
 
-print("DATABASE CONFIGURATION")
-print(f"Host: {database_config['host']}")
-print(f"Port: {database_config['port']}")
-print(f"Database: {database_config['name']}")
-print(f"Username: {database_config['username']}")
+    assert database_config is not None
+    assert "host" in database_config
+    assert "port" in database_config
+    assert "name" in database_config
+    assert "username" in database_config
+    assert "password" in database_config
 
+    # Test data configuration
+    data_config = configuration_manager.get_data_config()
 
-# Test data configuration
-data_config = configuration_manager.get_data_config()
+    assert data_config is not None
+    assert "raw" in data_config
+    assert "transformed" in data_config
+    assert "final" in data_config
 
-print("\nDATA CONFIGURATION")
-print(f"Raw: {data_config['raw']}")
-print(f"Transformed: {data_config['transformed']}")
-print(f"Final: {data_config['final']}")
+    # Test ETL configuration
+    etl_config = configuration_manager.get_etl_config()
 
-
-# Test ETL configuration
-etl_config = configuration_manager.get_etl_config()
-
-print("\nETL CONFIGURATION")
-print(etl_config)
+    assert etl_config is not None
