@@ -15,6 +15,24 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:16
+
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: 26032002
+          POSTGRES_DB: chennaitransit
+
+        ports:
+          - 5432:5432
+
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     env:
       DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
       DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
@@ -40,21 +58,5 @@ jobs:
           python -m compileall ChennaiTransit_AI
           python -m compileall models
 
-      - name: Check database environment variables
-        run: |
-          if [ -z "$DATABASE_USERNAME" ]; then
-            echo "DATABASE_USERNAME is MISSING"
-            exit 1
-          else
-            echo "DATABASE_USERNAME is available"
-          fi
-
-          if [ -z "$DATABASE_PASSWORD" ]; then
-            echo "DATABASE_PASSWORD is MISSING"
-            exit 1
-          else
-            echo "DATABASE_PASSWORD is available"
-          fi
-
       - name: Run tests
-        run: pytest
+        run: pytest -v
