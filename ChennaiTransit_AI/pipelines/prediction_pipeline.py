@@ -1,8 +1,8 @@
 import joblib
 import pandas as pd
-from pathlib import path
+from pathlib import Path
 
-BASE_DIR = path(__file__).resolve().parents[2]
+BASE_DIR = Path(__file__).resolve().parents[2]
 
 MODEL_PATH = BASE_DIR / 'artifacts' / 'xgboost_model.joblib'
 PREPROCESSOR_PATH = BASE_DIR / 'artifacts' / 'preprocessor.joblib'
