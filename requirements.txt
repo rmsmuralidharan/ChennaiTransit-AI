@@ -9,4 +9,8 @@ uvicorn
 pytest
 python-dotenv
 pyyaml
+fastapi
+uvicorn
+xgboost
+joblib
 -e .
