@@ -13,4 +13,5 @@ fastapi
 uvicorn
 xgboost
 joblib
+psycopg2-binary
 -e .
