@@ -9,8 +9,8 @@ on:
     branches:
       - clean-main
 
-
 jobs:
+
   test:
 
     runs-on: ubuntu-latest
@@ -60,3 +60,17 @@ jobs:
 
       - name: Run tests
         run: pytest -v
+
+  deploy:
+
+    needs: test
+
+    runs-on: ubuntu-latest
+
+    if: github.ref == 'refs/heads/clean-main' && github.event_name == 'push'
+
+    steps:
+
+      - name: Trigger Render deployment
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
