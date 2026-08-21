@@ -1,16 +1,23 @@
 import joblib
 import pandas as pd
+from pathlib import path
+
+BASE_DIR = path(__file__).resolve().parents[2]
+
+MODEL_PATH = BASE_DIR / 'artifacts' / 'xgboost_model.joblib'
+PREPROCESSOR_PATH = BASE_DIR / 'artifacts' / 'preprocessor.joblib'
+
 
 class PredictionPipeline:
 
     def __init__(self):
 
         self.preprocessor = joblib.load(
-            'artifacts/preprocessor.joblib'
+            PREPROCESSOR_PATH
         )
 
         self.model = joblib.load(
-            'artifacts/xgboost_model.joblib'
+            MODEL_PATH
         )
 
         print(
